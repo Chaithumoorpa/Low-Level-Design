@@ -1,0 +1,43 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 40px;
+}
+
+input {
+    padding: 10px;
+    margin: 5px;
+}
+
+button {
+    padding: 10px 20px;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 90px);
+    gap: 8px;
+    justify-content: center;
+    margin: 30px auto;
+}
+
+.cell-wrapper {
+    width: 90px;
+    height: 90px;
+}
+
+.cell-wrapper form {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+.cell {
+    width: 100%;
+    height: 100%;
+    font-size: 32px;
+    padding: 0;
+    border: 2px solid #444;
+    background: white;
+    cursor: pointer;
+}

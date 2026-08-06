@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <title>Tic Tac Toe</title>
+
+    <link rel="stylesheet" th:href="@{/style.css}">
+
+</head>
+
+<body>
+
+<h1>Tic Tac Toe</h1>
+
+<form th:action="@{/create}"
+      th:object="${gameRequest}"
+      method="post">
+
+    <input type="text"
+           th:field="*{player1}"
+           placeholder="Player 1"/>
+
+    <input type="text"
+           th:field="*{player2}"
+           placeholder="Player 2"/>
+           
+    <input
+    type="number"
+    th:field="*{boardSize}"
+    min="3"
+    max="10"
+    value="3"
+    placeholder="Board Size"/>
+
+    <button type="submit">
+        Start Game
+    </button>
+
+</form>
+
+</body>
+</html>
