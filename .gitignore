@@ -19,3 +19,6 @@ target/
 # OS
 .DS_Store
 Thumbs.db
+
+# Eclipse annotation processing
+.factorypath
