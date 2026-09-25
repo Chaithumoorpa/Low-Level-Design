@@ -9,3 +9,4 @@ product-based company interviews. Every project follows the same flow:
 | 1 | [LRU Cache](LRUCache/README.md) | Strategy, Decorator, Observer | O(1) HashMap + doubly linked list, O(1) LFU, TTL, thread safety | ✅ 24 tests |
 | 2 | [LFU Cache](LFUCache/README.md) | Composite structure, Builder, Observer | Strict O(1) frequency-list design vs O(log n) TreeSet, frequency aging, brute-force oracle tests | ✅ 19 tests |
 | 3 | [Search Autocomplete](SearchAutocomplete/README.md) | Trie, Facade, Strategy | Cached top-K per trie node, keystroke sessions with backspace, removal + block list | ✅ 18 tests |
+| 4 | [Rate Limiter](RateLimiter/README.md) | Strategy, Template Method, Composite, Factory, Facade | 5 algorithms side by side, per-key locking, exact retry-after, per-endpoint rules | ✅ 40 tests |
