@@ -13,6 +13,11 @@ Players take turns rolling a die and move forward by the rolled value. Landing o
 ladder** lifts you up; landing on the **head of a snake** drags you down. The first player to land
 **exactly** on the last cell wins.
 
+> 📚 **Credit:** The section outline of this README follows the publicly listed table of contents
+> of [AlgoMaster — Design Snake and Ladder Game](https://algomaster.io/learn/lld/design-snake-and-ladder).
+> All explanations, code, diagrams, tests and exercises here are my own original work written for
+> personal learning. See [References & Credits](#-references--credits).
+
 ---
 
 ## 📑 On this page
@@ -30,6 +35,7 @@ ladder** lifts you up; landing on the **head of a snake** drags you down. The fi
    - [6.1 Configurable Dice Count](#61-configurable-dice-count)
    - [6.2 Configurable Board Size and Placement Strategy](#62-configurable-board-size-and-placement-strategy)
 7. [Interview Cheat Sheet](#7-interview-cheat-sheet)
+8. [References & Credits](#-references--credits)
 
 ---
 
@@ -226,7 +232,7 @@ classDiagram
 
     class Board {
         -int size
-        -Map~Integer, BoardEntity~ entitiesByStart
+        -Map entitiesByStart
         +getEntityAt(int) Optional~BoardEntity~
         +getFinalPosition(int) int
         +getSize() int
@@ -272,7 +278,14 @@ classDiagram
 
     class TurnResult {
         <<record>>
-        player, roll, from, landedOn, to, entity, overshot, won
+        +Player player
+        +int roll
+        +int from
+        +int landedOn
+        +int to
+        +BoardEntity entity
+        +boolean overshot
+        +boolean won
     }
 
     class GameStatus {
@@ -288,7 +301,7 @@ classDiagram
         +resolve(from, target, size) int
     }
 
-    Game +-- Builder : nested
+    Builder ..> Game : builds
     Game *-- Board
     Game o-- Dice
     Game o-- "2..*" Player
@@ -651,5 +664,29 @@ Other strategies you could plug in without touching `Game`:
 6. Testing    → inject deterministic Dice
 7. Gotcha     → multi-dice + exact landing = possible deadlock → BOUNCE_BACK
 ```
+
+---
+
+## 📚 References & Credits
+
+| Resource | How it was used |
+|---|---|
+| [AlgoMaster.io — Design Snake and Ladder Game (LLD)](https://algomaster.io/learn/lld/design-snake-and-ladder) | Inspiration for the **order of topics** only (requirements → entities → classes → patterns → code → run & test → extensions), taken from the page's public table of contents. |
+| [Mermaid — Class & Sequence diagrams](https://mermaid.js.org/) | Diagram syntax rendered natively by GitHub. |
+| [JUnit 5 User Guide](https://junit.org/junit5/docs/current/user-guide/) | Unit testing. |
+
+**Originality statement**
+
+- This repository is a **personal learning project** for LLD interview preparation.
+- No text, code, diagrams, images or premium/paywalled content from AlgoMaster.io (or any other
+  source) has been copied or reproduced here. Only the high-level section headings — which describe
+  a standard LLD interview approach — are used as a structural guide.
+- All source code, explanations, tables, diagrams, tests and exercises were written independently.
+- This project is **not affiliated with or endorsed by** AlgoMaster.io. "AlgoMaster" is the
+  property of its respective owner.
+- If you want the full original lesson, please support the author by visiting
+  [algomaster.io](https://algomaster.io).
+
+---
 
 > ⭐ If this helped your preparation, star the repo and try the exercises above before peeking at the code!
