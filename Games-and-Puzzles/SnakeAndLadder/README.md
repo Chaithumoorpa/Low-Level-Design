@@ -13,33 +13,33 @@ Players take turns rolling a die and move forward by the rolled value. Landing o
 ladder** lifts you up; landing on the **head of a snake** drags you down. The first player to land
 **exactly** on the last cell wins.
 
-> 📚 **Credit:** The section outline of this README follows the publicly listed table of contents
-> of [AlgoMaster — Design Snake and Ladder Game](https://algomaster.io/learn/lld/design-snake-and-ladder).
-> All explanations, code, diagrams, tests and exercises here are my own original work written for
-> personal learning. See [References & Credits](#-references--credits).
+> 📚 **Credit:** Problem inspired by
+> [AlgoMaster — Design Snake and Ladder Game](https://algomaster.io/learn/lld/design-snake-and-ladder).
+> All headings, explanations, code, diagrams, tests and exercises here are my own original work
+> written for personal learning. See [References & Credits](#-references--credits).
 
 ---
 
 ## 📑 On this page
 
-1. [Clarifying Requirements](#1-clarifying-requirements)
-2. [Identifying Core Entities](#2-identifying-core-entities)
-3. [Designing Classes and Relationships](#3-designing-classes-and-relationships)
-   - [3.1 Class Definitions](#31-class-definitions)
-   - [3.2 Key Design Patterns](#32-key-design-patterns)
-   - [3.3 Full Class Diagram](#33-full-class-diagram)
-   - [Try It Yourself (Exercise)](#-try-it-yourself-exercise)
-4. [Code Implementation](#4-code-implementation)
-5. [Run and Test](#5-run-and-test)
-6. [Extensions](#6-extensions)
-   - [6.1 Configurable Dice Count](#61-configurable-dice-count)
-   - [6.2 Configurable Board Size and Placement Strategy](#62-configurable-board-size-and-placement-strategy)
-7. [Interview Cheat Sheet](#7-interview-cheat-sheet)
+1. [Scoping the Problem](#1-scoping-the-problem)
+2. [Finding the Building Blocks](#2-finding-the-building-blocks)
+3. [Object Model](#3-object-model)
+   - [3.1 Class Responsibilities](#31-class-responsibilities)
+   - [3.2 Patterns in Play](#32-patterns-in-play)
+   - [3.3 UML Diagrams](#33-uml-diagrams)
+   - [Practice Round](#-practice-round)
+4. [Implementation Walkthrough](#4-implementation-walkthrough)
+5. [Build, Run & Verify](#5-build-run--verify)
+6. [Follow-up Scenarios](#6-follow-up-scenarios)
+   - [6.1 Rolling with Multiple Dice](#61-rolling-with-multiple-dice)
+   - [6.2 Custom Board Sizes and Layout Strategies](#62-custom-board-sizes-and-layout-strategies)
+7. [Last-Minute Revision](#7-last-minute-revision)
 8. [References & Credits](#-references--credits)
 
 ---
 
-## 1. Clarifying Requirements
+## 1. Scoping the Problem
 
 In an interview, **never start coding immediately**. Spend the first 3–5 minutes asking questions
 that shrink the problem and surface hidden rules.
@@ -78,7 +78,7 @@ that shrink the problem and surface hidden rules.
 
 ---
 
-## 2. Identifying Core Entities
+## 2. Finding the Building Blocks
 
 A reliable technique: **underline the nouns** in the requirements, then keep the ones that have
 state or behavior.
@@ -102,9 +102,9 @@ state or behavior.
 
 ---
 
-## 3. Designing Classes and Relationships
+## 3. Object Model
 
-### 3.1 Class Definitions
+### 3.1 Class Responsibilities
 
 #### Enum — `GameStatus`
 ```java
@@ -114,7 +114,7 @@ Makes illegal actions explicit (e.g. `playTurn()` after `FINISHED` throws).
 
 #### Enum — `OvershootPolicy`
 `STAY` (classic) or `BOUNCE_BACK`. Each constant carries its own `resolve()` logic —
-the **enum-as-strategy** idiom. See [why it exists](#61-configurable-dice-count).
+the **enum-as-strategy** idiom. See [why it exists](#61-rolling-with-multiple-dice).
 
 #### Abstract class — `BoardEntity`
 | Member | Purpose |
@@ -180,7 +180,7 @@ default void onGameOver(Player winner) {}
 | `playTurn()` → `TurnResult` | One turn. |
 | `play()` → `Player` | Loop turns until a winner. |
 
-### 3.2 Key Design Patterns
+### 3.2 Patterns in Play
 
 | Pattern | Where | Why it matters here |
 |---|---|---|
@@ -198,7 +198,7 @@ default void onGameOver(Player winner) {}
 - **I** — small interfaces (`Dice` has one method; listener methods are `default`).
 - **D** — `Game` depends on `Dice` / `PlacementStrategy` abstractions, not concrete classes.
 
-### 3.3 Full Class Diagram
+### 3.3 UML Diagrams
 
 ```mermaid
 classDiagram
@@ -348,7 +348,7 @@ sequenceDiagram
     G-->>C: TurnResult
 ```
 
-### 🧠 Try It Yourself (Exercise)
+### 🧠 Practice Round
 
 Before reading the code, close this page and try to design these on your own (15 min each):
 
@@ -378,7 +378,7 @@ whole "poll → roll → move → offer" sequence, not individual fields. Valida
 
 ---
 
-## 4. Code Implementation
+## 4. Implementation Walkthrough
 
 ### 📁 Project structure
 
@@ -508,7 +508,7 @@ Player winner = game.play();
 
 ---
 
-## 5. Run and Test
+## 5. Build, Run & Verify
 
 ### Prerequisites
 - JDK **17+**
@@ -579,11 +579,11 @@ Priya    rolled  9 : 142 -> 149 (bounced back)  bitten by Snake(149 -> 138) -> 1
 
 ---
 
-## 6. Extensions
+## 6. Follow-up Scenarios
 
 Interviewers love *"Now what if…?"* follow-ups. A good design absorbs them with **new classes, not edits**.
 
-### 6.1 Configurable Dice Count
+### 6.1 Rolling with Multiple Dice
 
 **Ask:** "Play with 2 dice." → Already supported:
 
@@ -615,7 +615,7 @@ Game.builder()
 
 Bounce-back cells still go through `board.getFinalPosition(...)`, so you can bounce onto a snake. 🐍
 
-### 6.2 Configurable Board Size and Placement Strategy
+### 6.2 Custom Board Sizes and Layout Strategies
 
 **Ask:** "Make the board 12×12 with random snakes and ladders."
 
@@ -653,7 +653,7 @@ Other strategies you could plug in without touching `Game`:
 
 ---
 
-## 7. Interview Cheat Sheet
+## 7. Last-Minute Revision
 
 ```
 1. Clarify    → board size? #players? #dice? overshoot rule? chains? first winner ends?
@@ -671,7 +671,7 @@ Other strategies you could plug in without touching `Game`:
 
 | Resource | How it was used |
 |---|---|
-| [AlgoMaster.io — Design Snake and Ladder Game (LLD)](https://algomaster.io/learn/lld/design-snake-and-ladder) | Inspiration for the **order of topics** only (requirements → entities → classes → patterns → code → run & test → extensions), taken from the page's public table of contents. |
+| [AlgoMaster.io — Design Snake and Ladder Game (LLD)](https://algomaster.io/learn/lld/design-snake-and-ladder) | Inspiration for the **problem choice** only. Nothing from the lesson is reproduced here. |
 | [Mermaid — Class & Sequence diagrams](https://mermaid.js.org/) | Diagram syntax rendered natively by GitHub. |
 | [JUnit 5 User Guide](https://junit.org/junit5/docs/current/user-guide/) | Unit testing. |
 
@@ -679,9 +679,8 @@ Other strategies you could plug in without touching `Game`:
 
 - This repository is a **personal learning project** for LLD interview preparation.
 - No text, code, diagrams, images or premium/paywalled content from AlgoMaster.io (or any other
-  source) has been copied or reproduced here. Only the high-level section headings — which describe
-  a standard LLD interview approach — are used as a structural guide.
-- All source code, explanations, tables, diagrams, tests and exercises were written independently.
+  source) has been copied or reproduced here, including section headings.
+- All headings, source code, explanations, tables, diagrams, tests and exercises were written independently.
 - This project is **not affiliated with or endorsed by** AlgoMaster.io. "AlgoMaster" is the
   property of its respective owner.
 - If you want the full original lesson, please support the author by visiting
