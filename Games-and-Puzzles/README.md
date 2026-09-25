@@ -7,4 +7,5 @@ Every project follows the same flow: **Scoping → Building Blocks → Object Mo
 |---|---|---|---|---|
 | 1 | [Snake and Ladder](SnakeAndLadder/README.md) | Builder, Facade, Strategy, Observer | Board invariants, multi-dice deadlock fix | ✅ 40 tests |
 | 2 | [Minesweeper](Minesweeper/README.md) | Builder, Facade, Strategy, Observer, State | BFS flood fill, safe first click, chording | ✅ 76 tests |
-| 3 | [Tic Tac Toe](../TicTacToe) | — | Spring Boot version | ✅ |
+| 3 | [Chess](Chess/README.md) | Factory, Flyweight, Facade, Memento, Observer | Full rules, perft-verified move generator, undo | ✅ 41 tests |
+| 4 | [Tic Tac Toe](../TicTacToe) | — | Spring Boot version | ✅ |
