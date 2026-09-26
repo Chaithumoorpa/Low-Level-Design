@@ -9,3 +9,4 @@ Every project follows the same flow: **Scoping → Building Blocks → Object Mo
 | # | Problem | Key Patterns | Highlights | Status |
 |---|---|---|---|---|
 | 1 | [Stack Overflow](StackOverflow/README.md) | Post hierarchy, Strategy, Facade, Event log | Reputation as a reversible sum of events, privileges by reputation, vote undo/switch, accepted answers, 3-vote closing, bounties, revisions, word + tag search | ✅ 16 tests |
+| 2 | [Social Network](SocialNetwork/README.md) | Facade, Strategy, Observer, Graph BFS | Friend requests (crossed auto-accept), follows, blocking that cuts all ties, one privacy rule for every read, ranked and paged feed (chronological / decayed engagement), mutual friends, suggestions, degrees of separation | ✅ 14 tests |
