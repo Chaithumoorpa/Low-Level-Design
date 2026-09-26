@@ -14,7 +14,7 @@ through the design the way you would present it in an interview:
 | [🧱 Data Structures and Search](Data-Structures-and-Search/README.md) | LRU Cache, LFU Cache, Search Autocomplete, Rate Limiter, Bloom Filter |
 | [🔄 Managing States](Managing-States/README.md) | ATM, Vending Machine, Coffee Vending Machine, Elevator System, Traffic Control System |
 | [🏢 Management Systems](Management-Systems/README.md) | Parking Lot, Task Management System, Inventory Management System, Library Management System, Restaurant Management System |
-| [💬 Communications and Messaging](Communications-and-Messaging/README.md) | Notification System |
+| [💬 Communications and Messaging](Communications-and-Messaging/README.md) | Notification System, Pub-Sub System |
 
 ## ▶️ Running any project
 

@@ -9,3 +9,4 @@ Every project follows the same flow: **Scoping → Building Blocks → Object Mo
 | # | Problem | Key Patterns | Highlights | Status |
 |---|---|---|---|---|
 | 1 | [Notification System](NotificationSystem/README.md) | Facade, Adapter, Builder, Observer, Strategy | One delivery per channel, templates rendered up front, preferences and quiet hours, priority dispatch with claim-under-lock, exponential backoff, permanent-error fallback, SMS rate limit, idempotency key | ✅ 27 tests |
+| 2 | [Pub-Sub System](PubSub/README.md) | Publish-Subscribe, Strategy, Observer, Facade | Partitioned append-only logs, key-based ordering, consumer groups (fan-out + load balancing), rebalancing with generation fencing, committed offsets for at-least-once, retention, push subscriptions with retries and a dead-letter topic | ✅ 17 tests |
