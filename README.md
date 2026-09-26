@@ -15,7 +15,7 @@ through the design the way you would present it in an interview:
 | [🔄 Managing States](Managing-States/README.md) | ATM, Vending Machine, Coffee Vending Machine, Elevator System, Traffic Control System |
 | [🏢 Management Systems](Management-Systems/README.md) | Parking Lot, Task Management System, Inventory Management System, Library Management System, Restaurant Management System |
 | [💬 Communications and Messaging](Communications-and-Messaging/README.md) | Notification System, Pub-Sub System, Chat Application |
-| [💰 Finance and Payment](Finance-and-Payment/README.md) | Splitwise, Payment Gateway |
+| [💰 Finance and Payment](Finance-and-Payment/README.md) | Splitwise, Payment Gateway, Online Stock Exchange |
 
 ## ▶️ Running any project
 
