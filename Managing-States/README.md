@@ -8,3 +8,5 @@ Every project follows the same flow: **Scoping → Building Blocks → Object Mo
 | # | Problem | Key Patterns | Highlights | Status |
 |---|---|---|---|---|
 | 1 | [ATM](ATM/README.md) | State, Chain of Responsibility, Strategy, Facade, Observer | 4 states with safe defaults, PIN blocking + card retention, greedy vs optimal note dispensing, refund on jam | ✅ 27 tests |
+| 2 | [Vending Machine](VendingMachine/README.md) | State, Builder, Facade, Observer | Escrowed coins, change planned before dispensing (exact-change-only), coin return, jam refund | ✅ 18 tests |
+| 3 | [Coffee Vending Machine](CoffeeVendingMachine/README.md) | State, Decorator, Template Method, Strategy, Observer | Stackable extras, all-or-nothing ingredients, brewing template, cash/card, cleaning cycle | ✅ 21 tests |

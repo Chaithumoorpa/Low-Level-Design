@@ -12,7 +12,7 @@ through the design the way you would present it in an interview:
 |---|---|
 | [🎮 Games and Puzzles](Games-and-Puzzles/README.md) | Snake and Ladder, Minesweeper, Chess, Tic Tac Toe, Sudoku |
 | [🧱 Data Structures and Search](Data-Structures-and-Search/README.md) | LRU Cache, LFU Cache, Search Autocomplete, Rate Limiter, Bloom Filter |
-| [🔄 Managing States](Managing-States/README.md) | ATM |
+| [🔄 Managing States](Managing-States/README.md) | ATM, Vending Machine, Coffee Vending Machine |
 
 ## ▶️ Running any project
 
