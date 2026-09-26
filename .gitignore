@@ -22,3 +22,7 @@ Thumbs.db
 
 # Eclipse annotation processing
 .factorypath
+/.metadata/
+
+# IDE build output (VS Code / Eclipse Java)
+bin/
