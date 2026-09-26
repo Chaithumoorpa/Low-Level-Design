@@ -17,7 +17,7 @@ through the design the way you would present it in an interview:
 | [💬 Communications and Messaging](Communications-and-Messaging/README.md) | Notification System, Pub-Sub System, Chat Application |
 | [💰 Finance and Payment](Finance-and-Payment/README.md) | Splitwise, Payment Gateway, Online Stock Exchange |
 | [🌐 Social and Content Platform](Social-and-Content-Platform/README.md) | Stack Overflow, Social Network, Learning Platform |
-| [🎟️ Booking and Reservation](Booking-and-Reservation/README.md) | Movie Booking System, Food Delivery Service |
+| [🎟️ Booking and Reservation](Booking-and-Reservation/README.md) | Movie Booking System, Food Delivery Service, Ride-Sharing (Uber) |
 
 ## ▶️ Running any project
 
